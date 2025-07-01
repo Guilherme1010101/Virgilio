@@ -4,70 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação da Parceria: Vista & Virgílio</title>
+    <!-- Carrega o Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pré-conecta e carrega a fonte Montserrat do Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos globais para o corpo da página */
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #eef2f7; /* Um cinza azulado claro */
-        }
-        .slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-            position: absolute;
-            inset: 0;
+            display: flex; /* Usa flexbox para centralizar o conteúdo */
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 2rem 4rem;
+            justify-content: center;
+            min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+            padding: 1rem; /* Adiciona um preenchimento geral */
         }
+        /* Estilos para cada slide da apresentação */
+        .slide {
+            display: none; /* Oculta os slides por padrão */
+            opacity: 0; /* Define a opacidade inicial para a transição */
+            transition: opacity 0.6s ease-in-out; /* Transição suave para a opacidade */
+            position: absolute; /* Posicionamento absoluto para sobrepor os slides */
+            inset: 0; /* Ocupa todo o espaço do contêiner pai */
+            flex-direction: column; /* Organiza o conteúdo em coluna */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center; /* Alinha o texto ao centro */
+            padding: 2rem 4rem; /* Preenchimento interno do slide */
+        }
+        /* Estilo para o slide ativo */
         .slide.active {
-            display: flex;
-            opacity: 1;
+            display: flex; /* Exibe o slide ativo */
+            opacity: 1; /* Torna o slide ativo visível */
         }
+        /* Animação de fade-in para o conteúdo do slide */
         .slide-content {
             animation: fadeIn 0.8s ease-in-out;
         }
+        /* Keyframes para a animação de fade-in */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Cores baseadas no logo */
-        .bg-vista-dark { background-color: #212529; }
-        .bg-vista-light { background-color: #f8f9fa; }
-        .text-vista-blue { color: #00a9e0; }
-        .border-vista-blue { border-color: #00a9e0; }
+        /* Cores baseadas no logo da Vista */
+        .bg-vista-dark { background-color: #212529; } /* Fundo escuro */
+        .bg-vista-light { background-color: #f8f9fa; } /* Fundo claro */
+        .text-vista-blue { color: #00a9e0; } /* Texto azul */
+        .border-vista-blue { border-color: #00a9e0; } /* Borda azul */
+        /* Estilo para os botões de navegação */
         .btn-vista {
-            background-color: #00a9e0;
-            transition: background-color 0.3s;
+            background-color: #00a9e0; /* Cor de fundo do botão */
+            transition: background-color 0.3s; /* Transição suave para o hover */
         }
         .btn-vista:hover {
-            background-color: #0087b3;
+            background-color: #0087b3; /* Cor de fundo ao passar o mouse */
         }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen p-4">
 
     <div class="w-full max-w-5xl mx-auto">
-        <!-- Presentation Container -->
+        <!-- Contêiner principal da apresentação -->
         <div id="presentation-container" class="relative w-full aspect-[16/9] bg-white rounded-xl overflow-hidden shadow-2xl">
             
             <!-- Slide 1: Capa -->
             <div class="slide active bg-vista-dark text-white">
                 <div class="slide-content w-full">
-                    <!-- Quadro branco para o logo -->
-                    <div class="bg-white p-4 rounded-lg inline-block mx-auto mb-10 shadow-lg">
-                        <img src="https://vistainvest.com.br/wp-content/uploads/2023/09/Grupo-7.svg" alt="Logo Vista Investimentos" class="h-20">
-                    </div>
+                    <!-- LOGO ATUALIZADO CONFORME SOLICITADO -->
+                    <img src="https://vistainvest.com.br/wp-content/uploads/2023/09/Grupo-7.svg" alt="Logo Vista Investimentos Necton" class="mx-auto mb-10 h-24">
                     <h1 class="text-4xl md:text-5xl font-bold leading-tight tracking-wide">Início de uma Parceria de Sucesso</h1>
                     <p class="text-2xl mt-4 text-gray-300">Vista Investimentos & Virgílio Valadares Nogueira</p>
                     <div class="absolute bottom-10 left-0 right-0">
                         <p class="text-base">Apresentado por: <strong>Guilherme Moreira</strong>, Private Banker</p>
-                        <p class="text-sm text-gray-400 mt-1">01 de julho de 2025</p>
+                        <!-- A data foi removida conforme a solicitação anterior -->
                     </div>
                 </div>
             </div>
@@ -79,9 +91,21 @@
                     <p class="text-lg text-gray-600 mt-4 mb-8">Estamos entusiasmados por iniciar esta parceria com um profissional certificado e experiente.</p>
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Nossa visão compartilhada:</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue"><span class="text-3xl">🎯</span><strong class="block mt-2 text-gray-800">Foco no Cliente</strong><p class="text-sm text-gray-500 mt-1">Oferecer as melhores soluções de investimento e assessoria.</p></div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue"><span class="text-3xl">🚀</span><strong class="block mt-2 text-gray-800">Crescimento Mútuo</strong><p class="text-sm text-gray-500 mt-1">Alavancar nossa expertise combinada para expandir os negócios.</p></div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue"><span class="text-3xl">🤝</span><strong class="block mt-2 text-gray-800">Confiança e Transparência</strong><p class="text-sm text-gray-500 mt-1">Construir uma parceria duradoura baseada na clareza.</p></div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue">
+                            <span class="text-3xl">🎯</span>
+                            <strong class="block mt-2 text-gray-800">Foco no Cliente</strong>
+                            <p class="text-sm text-gray-500 mt-1">Oferecer as melhores soluções de investimento e assessoria.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue">
+                            <span class="text-3xl">🚀</span>
+                            <strong class="block mt-2 text-gray-800">Crescimento Mútuo</strong>
+                            <p class="text-sm text-gray-500 mt-1">Alavancar nossa expertise combinada para expandir os negócios.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-vista-blue">
+                            <span class="text-3xl">🤝</span>
+                            <strong class="block mt-2 text-gray-800">Confiança e Transparência</strong>
+                            <p class="text-sm text-gray-500 mt-1">Construir uma parceria duradoura baseada na clareza.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,9 +116,9 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">A Estrutura da Nossa Parceria</h2>
                     <p class="text-lg text-gray-600 mt-4 mb-8">Esta apresentação resume os pontos-chave do nosso Contrato de Parceria Comercial, garantindo total alinhamento sobre:</p>
                     <div class="space-y-4 text-left max-w-md mx-auto">
-                         <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">1</div><p class="text-gray-700">O Papel de Cada Um</p></div>
-                         <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">2</div><p class="text-gray-700">O Modelo de Remuneração</p></div>
-                         <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">3</div><p class="text-gray-700">As Diretrizes Operacionais e de Compliance</p></div>
+                           <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">1</div><p class="text-gray-700">O Papel de Cada Um</p></div>
+                           <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">2</div><p class="text-gray-700">O Modelo de Remuneração</p></div>
+                           <div class="flex items-start"><div class="flex-shrink-0 w-6 h-6 rounded-full bg-vista-blue text-white flex items-center justify-center mr-4 mt-1">3</div><p class="text-gray-700">As Diretrizes Operacionais e de Compliance</p></div>
                     </div>
                 </div>
             </div>
@@ -102,27 +126,27 @@
             <!-- Slide 4: Responsabilidades -->
             <div class="slide bg-vista-light">
                 <div class="slide-content w-full max-w-4xl">
-                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Responsabilidades Chave</h2>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div class="bg-white p-6 rounded-lg shadow-sm">
-                            <h3 class="text-xl font-bold text-vista-blue">O Papel do PARCEIRO (Virgílio)</h3>
-                            <ul class="mt-4 space-y-3 text-gray-600">
-                                <li class="flex items-center">➡️<span class="ml-2">Atuar na prospecção, captação e assessoria de clientes.</span></li>
-                                <li class="flex items-center">➡️<span class="ml-2">Exercer as atividades em conformidade com as normas da CVM.</span></li>
-                                <li class="flex items-center">➡️<span class="ml-2">Manter total sigilo sobre as informações de clientes.</span></li>
-                                <li class="flex items-center">➡️<span class="ml-2">Manter sua certificação Ancord sempre ativa.</span></li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm">
-                            <h3 class="text-xl font-bold text-gray-700">O Papel da VISTA (Escritório)</h3>
-                             <ul class="mt-4 space-y-3 text-gray-600">
-                                <li class="flex items-center">✅<span class="ml-2">Fornecer infraestrutura e suporte informativo.</span></li>
-                                <li class="flex items-center">✅<span class="ml-2">Realizar apuração e pagamento da comissão com transparência.</span></li>
-                                <li class="flex items-center">✅<span class="ml-2">Disponibilizar relatórios de receita gerada.</span></li>
-                                <li class="flex items-center">✅<span class="ml-2">Oferecer um portfólio de produtos competitivo.</span></li>
-                            </ul>
-                        </div>
-                     </div>
+                       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Responsabilidades Chave</h2>
+                       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold text-vista-blue">O Papel do PARCEIRO (Virgílio)</h3>
+                                <ul class="mt-4 space-y-3 text-gray-600">
+                                    <li class="flex items-center">➡️<span class="ml-2">Atuar na prospecção, captação e assessoria de clientes.</span></li>
+                                    <li class="flex items-center">➡️<span class="ml-2">Exercer as atividades em conformidade com as normas da CVM.</span></li>
+                                    <li class="flex items-center">➡️<span class="ml-2">Manter total sigilo sobre as informações de clientes.</span></li>
+                                    <li class="flex items-center">➡️<span class="ml-2">Manter sua certificação Ancord sempre ativa.</span></li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold text-gray-700">O Papel da VISTA (Escritório)</h3>
+                                   <ul class="mt-4 space-y-3 text-gray-600">
+                                    <li class="flex items-center">✅<span class="ml-2">Fornecer infraestrutura e suporte informativo.</span></li>
+                                    <li class="flex items-center">✅<span class="ml-2">Realizar apuração e pagamento da comissão com transparência.</span></li>
+                                    <li class="flex items-center">✅<span class="ml-2">Disponibilizar relatórios de receita gerada.</span></li>
+                                    <li class="flex items-center">✅<span class="ml-2">Oferecer um portfólio de produtos competitivo.</span></li>
+                                </ul>
+                            </div>
+                       </div>
                 </div>
             </div>
 
@@ -130,7 +154,7 @@
             <div class="slide bg-white">
                 <div class="slide-content w-full max-w-4xl">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Modelo de Remuneração</h2>
-                     <p class="text-lg text-gray-500 mt-2 mb-8">Clareza e transparência no nosso modelo financeiro.</p>
+                       <p class="text-lg text-gray-500 mt-2 mb-8">Clareza e transparência no nosso modelo financeiro.</p>
                     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                         <div class="bg-vista-light p-6 rounded-lg shadow-sm">
                             <h3 class="font-bold text-gray-500">PERCENTUAL</h3>
@@ -169,14 +193,14 @@
                     <p class="text-lg text-gray-600 mt-4 mb-8">Nosso plano de ação para dar início à parceria:</p>
                     <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
                         <div class="text-center p-6 bg-vista-light rounded-lg shadow-sm">
-                           <div class="text-4xl font-bold text-vista-blue">1</div>
-                           <p class="mt-2 font-semibold text-gray-700">Assinatura do Contrato</p>
-                           <p class="text-sm text-gray-500">Formalizar o documento que estabelece nossa parceria.</p>
+                               <div class="text-4xl font-bold text-vista-blue">1</div>
+                               <p class="mt-2 font-semibold text-gray-700">Assinatura do Contrato</p>
+                               <p class="text-sm text-gray-500">Formalizar o documento que estabelece nossa parceria.</p>
                         </div>
-                         <div class="text-center p-6 bg-vista-light rounded-lg shadow-sm">
-                           <div class="text-4xl font-bold text-vista-blue">2</div>
-                           <p class="mt-2 font-semibold text-gray-700">Reunião de Kick-off</p>
-                           <p class="text-sm text-gray-500">Marcar nosso primeiro alinhamento operacional.</p>
+                           <div class="text-center p-6 bg-vista-light rounded-lg shadow-sm">
+                               <div class="text-4xl font-bold text-vista-blue">2</div>
+                               <p class="mt-2 font-semibold text-gray-700">Reunião de Kick-off</p>
+                               <p class="text-sm text-gray-500">Marcar nosso primeiro alinhamento operacional.</p>
                         </div>
                     </div>
                 </div>
@@ -193,7 +217,7 @@
 
         </div>
 
-        <!-- Navigation -->
+        <!-- Navegação da apresentação -->
         <div class="flex justify-between items-center mt-4">
             <button id="prevBtn" class="bg-gray-600 text-white py-2 px-6 rounded-md hover:bg-gray-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed">Anterior</button>
             <div id="slide-counter" class="text-gray-700 font-semibold"></div>
@@ -202,37 +226,47 @@
     </div>
     
     <script>
+        // Adiciona um listener para quando o DOM estiver completamente carregado
         document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const slideCounter = document.getElementById('slide-counter');
-            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide'); // Seleciona todos os slides
+            const prevBtn = document.getElementById('prevBtn'); // Botão "Anterior"
+            const nextBtn = document.getElementById('nextBtn'); // Botão "Próximo"
+            const slideCounter = document.getElementById('slide-counter'); // Contador de slides
+            let currentSlide = 0; // Índice do slide atual, começa no primeiro (0)
 
+            // Função para exibir um slide específico
             function showSlide(n) {
                 slides.forEach((slide, index) => {
+                    // Adiciona ou remove a classe 'active' para controlar a visibilidade e a animação
                     slide.classList.toggle('active', index === n);
                 });
+                // Atualiza o texto do contador de slides (ex: "1 / 8")
                 slideCounter.textContent = `${n + 1} / ${slides.length}`;
+                // Desabilita o botão "Anterior" se for o primeiro slide
                 prevBtn.disabled = n === 0;
+                // Desabilita o botão "Próximo" se for o último slide
                 nextBtn.disabled = n === slides.length - 1;
             }
 
+            // Listener para o botão "Próximo"
             nextBtn.addEventListener('click', () => {
+                // Avança para o próximo slide se não for o último
                 if (currentSlide < slides.length - 1) {
                     currentSlide++;
                     showSlide(currentSlide);
                 }
             });
 
+            // Listener para o botão "Anterior"
             prevBtn.addEventListener('click', () => {
+                // Volta para o slide anterior se não for o primeiro
                 if (currentSlide > 0) {
                     currentSlide--;
                     showSlide(currentSlide);
                 }
             });
             
-            // Initialize
+            // Inicializa a apresentação exibindo o primeiro slide ao carregar a página
             showSlide(currentSlide);
         });
     </script>
